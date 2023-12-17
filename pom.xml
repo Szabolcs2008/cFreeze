@@ -6,7 +6,7 @@
 
     <groupId>me.szabolcs2008</groupId>
     <artifactId>freeze_v2</artifactId>
-    <version>1.4.2</version>
+    <version>1.4.3</version>
     <packaging>jar</packaging>
 
     <name>FreezePlugin</name>

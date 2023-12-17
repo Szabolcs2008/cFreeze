@@ -1,7 +1,5 @@
 package me.szabolcs2008.freeze_v2;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -9,22 +7,22 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
-import java.io.File;
-import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+
 public final class FreezePlugin extends JavaPlugin implements Listener {
 
-    Logger log;
     ArrayList<String> frozen;
     String prefix;
     List<String> chatMessage;
@@ -39,10 +37,7 @@ public final class FreezePlugin extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        final File configFile = new File(this.getDataFolder(), "config.yml");
-        if (!configFile.exists()) {
-            this.saveDefaultConfig();
-        }
+        saveDefaultConfig();
         prefix = this.getConfig().getString("prefix");
         chatMessage = getConfig().getStringList("chatMessage");
         enabledCommands = getConfig().getStringList("enabledCommands");
@@ -54,7 +49,7 @@ public final class FreezePlugin extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        this.log.info("Freeze kikapcsolva!");
+        getLogger().info("Freeze kikapcsolva!");
         this.getServer().getPluginManager().registerEvents(this, this);
         this.getCommand("freeze").setExecutor(this);
     }
