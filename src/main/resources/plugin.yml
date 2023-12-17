@@ -1,0 +1,13 @@
+name: CryonityFreeze
+version: '${project.version}'
+main: me.szabolcs2008.freeze_v2.FreezePlugin
+prefix: Freeze
+load: STARTUP
+authors: [Szabolcs2008]
+description: Freeze.
+commands:
+  freeze:
+    description: Freeze.
+    usage: /freeze <játékos>
+    permission: cfreeze.freeze
+
