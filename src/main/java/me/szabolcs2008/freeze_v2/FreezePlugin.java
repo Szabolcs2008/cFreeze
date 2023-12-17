@@ -18,7 +18,6 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import java.io.File;
-import java.util.Locale;
 import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
